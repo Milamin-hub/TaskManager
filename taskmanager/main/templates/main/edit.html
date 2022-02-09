@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Изменить задание</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <input class="form-control" type="text" name="title" value="{{task.title}}"/>
+        </p>
+        <p>
+            <textarea class="form-control" name="content">{{task.content}}</textarea>
+        </p>
+        <input type="submit" value="Сохранить" class="btn alert-success" >
+    </form>
+{% endblock %}
